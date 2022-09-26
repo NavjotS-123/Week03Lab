@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-sequiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Age Calculator</title>
     </head>
     <body>
@@ -17,7 +17,7 @@
             Enter your age: <input type="number" name="ageNum"><br>
             <input type="submit" value="Age next birthday">
         </form>
-            <p>${messages}</p>
-            <a href="arithmetic">Arithmetic Calculator</a>
+        <p>${messages}</p>
+        <a href="arithmetic">Arithmetic Calculator</a>
     </body>
 </html>

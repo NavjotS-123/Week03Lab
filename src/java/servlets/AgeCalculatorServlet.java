@@ -16,29 +16,28 @@ import javax.servlet.http.HttpServletResponse;
  * @author navjo
  */
 public class AgeCalculatorServlet extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            getServletContext().getRequestDispatcher("/WEB-INF/ageCalculator.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/WEB-INF/ageCalculator.jsp").forward(request, response);
     }
-
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            String ageNum = (request.getParameter("ageNum"));
-            
-            try{
-                int ageNumber = Integer.parseInt(ageNum);
-                ageNumber ++;
-                request.setAttribute("messages", "Your age next birthday will be " + ageNumber);
-            }
-            catch(Exception e){
-                request.setAttribute("messages", "You must give your current age");
-                getServletContext().getRequestDispatcher("/WEB-INF/ageCalculator.jsp").forward(request, response);
-                return;
-            
-            }
+        String ageNum = (request.getParameter("ageNum"));
+
+        try {
+            int ageNumber = Integer.parseInt(ageNum);
+            ageNumber++;
+            request.setAttribute("messages", "Your age next birthday will be " + ageNumber);
+        } catch (Exception e) {
+            request.setAttribute("messages", "You must give your current age");
             getServletContext().getRequestDispatcher("/WEB-INF/ageCalculator.jsp").forward(request, response);
+            return;
+
+        }
+        getServletContext().getRequestDispatcher("/WEB-INF/ageCalculator.jsp").forward(request, response);
     }
 }
